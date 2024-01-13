@@ -3,6 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - "./app:/app"
-    command: make test        
+    image: zhedevops/devops-project-74
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: make test    
