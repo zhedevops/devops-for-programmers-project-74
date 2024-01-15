@@ -17,4 +17,4 @@ prod2:
 	docker-compose up web
 
 run-hub:
-	docker run -p 8080:8080 zhedevops/devops-project-74 npm run dev
+	docker run -p 8080:8080 zhedevops/devops-for-programmers-project-74
