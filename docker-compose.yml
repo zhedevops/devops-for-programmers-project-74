@@ -9,4 +9,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: make test    
+    command: make test   
+    image: zhedevops/devops-for-programmers-project-74
