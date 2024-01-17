@@ -1,20 +1,14 @@
-test:
-	npm test
-
-dev:
-	npm run dev
-
-compose-test:
+file-tests:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit tests
 
-run-tests:
+tests:
 	docker-compose up tests
 
-prod:
+file-dev:
 	docker-compose -f docker-compose.override.yml up
 
-prod2:
+dev:
 	docker-compose up web
 
-run-hub:
+run-app:
 	docker run -p 8080:8080 zhedevops/devops-for-programmers-project-74
