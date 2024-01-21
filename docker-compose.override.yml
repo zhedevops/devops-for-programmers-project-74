@@ -1,14 +1,14 @@
 services:
-  web:
+  app:
     extends:
       file: docker-compose.yml
-      service: app
+      service: web
     volumes:
       - ./app:/app
     ports:
       - 8080:8080
     working_dir: /app
-    command: make dev    
+    command: npm run dev    
 
   caddy:
     image: caddy:latest
@@ -21,7 +21,7 @@ services:
        - caddy_data:/data
        - caddy_config:/config    
     depends_on:
-      - web
+      - app
 
 volumes:
   caddy_data:
