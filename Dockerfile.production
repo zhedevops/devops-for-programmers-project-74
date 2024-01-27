@@ -11,5 +11,4 @@ COPY app/. .
 
 EXPOSE 8080
 
-CMD npm run dev
-
+CMD cp -n .env.example .env && npm run dev
