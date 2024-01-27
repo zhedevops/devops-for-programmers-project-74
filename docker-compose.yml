@@ -4,6 +4,9 @@ services:
       context: .
       dockerfile: Dockerfile
     image: zhedevops/devops-project-74
+    env_file:
+      - .env
+      
 
   tests:
     build:
@@ -11,3 +14,10 @@ services:
       dockerfile: Dockerfile.production
     command: make test   
     image: zhedevops/devops-for-programmers-project-74
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USERNAME}          

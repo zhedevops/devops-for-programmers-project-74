@@ -7,8 +7,8 @@ services:
       - ./app:/app
     ports:
       - 8080:8080
-    working_dir: /app
-    command: npm run dev    
+    command: bash -c 'sleep 3 && npm start'
+    depends_on: [db]
 
   caddy:
     image: caddy:latest
@@ -22,6 +22,13 @@ services:
        - caddy_config:/config    
     depends_on:
       - app
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USERNAME}     
 
 volumes:
   caddy_data:
