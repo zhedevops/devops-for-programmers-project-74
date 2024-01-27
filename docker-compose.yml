@@ -16,6 +16,8 @@ services:
       dockerfile: Dockerfile.production
     command: make test   
     image: zhedevops/devops-for-programmers-project-74
+    environment:
+      <<: *env  
     depends_on: [db]  
 
   db:
