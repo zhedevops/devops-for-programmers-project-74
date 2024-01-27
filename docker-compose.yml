@@ -18,7 +18,9 @@ services:
     image: zhedevops/devops-for-programmers-project-74
     environment:
       <<: *env  
-    depends_on: [db]  
+    depends_on: [db] 
+    healthcheck:
+      start_period: 3s
 
   db:
     image: postgres
