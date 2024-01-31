@@ -22,7 +22,10 @@ jobs:
 
     - name: copy env
       run: cp -n app/.env.example .env
-    
+
+    - name: show repfiles after
+      run: ls -al
+
     - name: run tests
       run: make ci  
       
