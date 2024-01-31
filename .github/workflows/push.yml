@@ -17,8 +17,11 @@ jobs:
     # checkout — клонирует репозиторий
     - uses: actions/checkout@v3
 
+    - name: show repfiles
+      run: ls -al
+
     - name: copy env
-      run: cp -n /app/.env.example .env
+      run: cp -n app/.env.example .env
     
     - name: run tests
       run: make ci  
