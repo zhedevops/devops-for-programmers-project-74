@@ -17,20 +17,14 @@ jobs:
     # checkout — клонирует репозиторий
     - uses: actions/checkout@v3
 
-    - name: show repfiles
-      run: ls -al app/
-
     - name: copy env
-      run: cp -n app/.env.example .env
+      run: cp -n .env.example .env
 
-    - name: show repfiles after
-      run: ls -al
-
-    - name: show env
-      run: cat .env    
-
-    - name: run tests
+     - name: run tests
       run: make ci  
+      
+    - name: del env
+      run: rm .env    
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile.production --tag latest:$(date +%s)
