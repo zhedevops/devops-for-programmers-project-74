@@ -24,7 +24,7 @@ jobs:
       run: make ci  
       
     - name: del env
-      run: rm .env && ls -al   
+      run: rm .env 
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile.production --tag latest:$(date +%s)
