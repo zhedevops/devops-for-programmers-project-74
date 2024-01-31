@@ -26,6 +26,9 @@ jobs:
     - name: show repfiles after
       run: ls -al
 
+    - name: show env
+      run: cat .env    
+
     - name: run tests
       run: make ci  
       
