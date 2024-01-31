@@ -20,7 +20,7 @@ services:
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}  
+      DATABASE_PASSWORD:  password 
     depends_on: 
       db: 
         condition: service_healthy
