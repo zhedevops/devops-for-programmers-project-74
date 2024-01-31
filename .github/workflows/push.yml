@@ -20,7 +20,7 @@ jobs:
     - name: copy env
       run: cp -n .env.example .env
 
-     - name: run tests
+    - name: run tests
       run: make ci  
       
     - name: del env
