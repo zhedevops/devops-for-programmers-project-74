@@ -21,7 +21,7 @@ jobs:
       run: cp -n .env.example .env
 
     - name: run tests
-      run: make ci  
+      run: make compose-ci  
       
     - name: del env
       run: rm .env 

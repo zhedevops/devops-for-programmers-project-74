@@ -14,9 +14,9 @@ https://hub.docker.com/repository/docker/zhedevops/devops-for-programmers-projec
 
 Команды:
 
-Запуск dev-версии приложения: make dev
+Запуск dev-версии приложения: make compose-dev
 
-Запуск production-версии приложения (с тестами): make prod
+Запуск production-версии приложения (с тестами): make compose-prod
 
 
 ### Hexlet tests and linter status:
