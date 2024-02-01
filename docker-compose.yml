@@ -1,5 +1,5 @@
 services:
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: make test   
+    command: npm test   
     image: zhedevops/devops-for-programmers-project-74
     environment:
       DATABASE_HOST: ${DATABASE_HOST}
@@ -26,7 +26,7 @@ services:
         condition: service_healthy
 
   db:
-    image: postgres
+    image: postgres:16.1
     restart: always
     environment:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}

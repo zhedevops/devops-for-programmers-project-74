@@ -1,10 +1,10 @@
-ci:
+compose-ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit tests
 
-prod:
+compose-prod:
 	docker-compose up tests
 
-dev:
+compose-dev:
 	docker-compose up caddy
 
 run-app:
